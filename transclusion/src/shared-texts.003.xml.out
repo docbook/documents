@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<article xmlns="http://docbook.org/ns/docbook">
+<article xmlns="http://docbook.org/ns/docbook" version="5.0">
   <info>
-    <title>Transclusions demo</title>
+      <title>Transclusions demo</title>
   </info>
-  <para>The latest version of <application>FooWiz</application>
-    from ACME Inc. is 3.14.</para>
+  <para>The latest version of
+    <application>
+         <phrase xml:base="definitions.001.xml" xml:id="product-name">FooWiz</phrase>
+      </application> from
+    <phrase xml:base="definitions.001.xml" xml:id="corp-name">ACME Inc.</phrase>
+    is <phrase xml:base="definitions.001.xml" xml:id="product-version">3.14</phrase>.</para>
+  <para>You can buy <phrase xml:base="definitions.001.xml" xml:id="product-name">FooWiz</phrase> in our on-line store.</para>
 </article>

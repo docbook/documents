@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://docbook.org/ns/docbook">
-  <def name="product-version">3.14</def>
-  <def name="product-name">FooWiz</def>
-  <def name="corp-name">ACME Inc.</def>
-</definitions>
+<article xmlns="http://docbook.org/ns/docbook" version="5.0">
+  <title>Placeholder for definitions</title>
+  <para>
+    <phrase xml:id="product-version">3.14</phrase>
+    <phrase xml:id="product-name">FooWiz</phrase>
+    <phrase xml:id="corp-name">ACME Inc.</phrase>
+  </para>
+</article>

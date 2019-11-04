@@ -9,14 +9,9 @@
     <para>Grab money, go to shop, ...</para>
   </chapter>
   <chapter>
-    <title>Quick installation guide</title>
-    <para>Carefully follow all procedures below.</para>
-    <xi:include href="procedure.001.xml" trans:idfixup="suffix" trans:suffix="_install-proc"/>
-  </chapter>
-  <chapter>
     <title>Maintenance</title>
     <para>Be friendly to your printer when you speak to it.</para>
     <para>If the green led is blinking, please add paper using the following procedure.</para>
-    <xi:include href="procedure.001.xml" trans:idfixup="suffix" trans:suffix="_maintain-proc"/>
+    <xi:include href="procedure.002.xml" trans:idfixup="suffix" trans:suffix="_procedure002"/>
   </chapter>
 </book>
