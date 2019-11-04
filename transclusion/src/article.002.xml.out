@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns="http://docbook.org/ns/docbook" version="5.0">
+  <title>Sample article</title>
+  <section version="5.0" os="bsd" xml:base="section.001.xml">
+      <title>Installation</title>
+      <para>Text</para>
+   </section>
+</article>

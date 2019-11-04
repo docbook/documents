@@ -22,7 +22,7 @@ or whether DocBook specific mechanism should be designed.</para>
 <para>DocBook TC has not yet decided whether DocBook specific
 mechanism is really required or not. But draft proposal of such transclusion
 mechanism is available at <link
-xlink:href="http://docbook.org/docs/transclusion/"/>.</para>
+xlink:href="https://docbook.org/docs/transclusion/"/>.</para>
 </note>
 
 <section xml:id="uc-1" xreflabel="UC-1">
@@ -41,7 +41,7 @@ rebranding of content very easy.</para>
 <title>Entities</title>
 
 <para>This use-case can be solved by using <link
-xlink:href="http://www.w3.org/TR/REC-xml/#sec-internal-ent">internal
+xlink:href="https://www.w3.org/TR/REC-xml/#sec-internal-ent">internal
 entities</link>. This is well supported in processing tools and to
 some extent in authoring tools. However entities are somewhat hard to
 maintain when you use modular documents at the same time. Also
@@ -65,7 +65,7 @@ from &corp-name; is &product-version;.</para>]]></programlisting>
 <title>XInclude</title>
 
 <para><link
-	  xlink:href="http://www.w3.org/TR/xinclude/">XInclude</link>
+	  xlink:href="https://www.w3.org/TR/xinclude/">XInclude</link>
 when combined with proper XPointer schema can be used for transclusion
 of single element or even only its text content. In this setup there
 can be separate file with definition of shared texts which are then
@@ -138,7 +138,7 @@ separate use-cases is created.</para>
 <title>Entities</title>
 
 <para>This use-case can be solved only by using <link
-xlink:href="http://www.w3.org/TR/REC-xml/#sec-internal-ent">internal
+xlink:href="https://www.w3.org/TR/REC-xml/#sec-internal-ent">internal
 entities</link>. This is well supported in processing tools and to
 some extent in authoring tools.</para>
 
@@ -169,7 +169,7 @@ also subject to conditional processing.</para>
 <title>Conditional sections</title>
 
 <para>This use-case can be solved by using <link
-xlink:href="http://www.w3.org/TR/REC-xml/#sec-condition-sect">conditional
+xlink:href="https://www.w3.org/TR/REC-xml/#sec-condition-sect">conditional
 sections</link> which can enclose entity definitions.</para>
 
 <remark>Do we need example here? It is rarely used feature.</remark>
@@ -218,7 +218,7 @@ for reusing of boilerplate texts like legalnotices.</para>
 <title>Entities</title>
 
 <para>This use-case can be solved by using <link
-xlink:href="http://www.w3.org/TR/REC-xml/#sec-external-ent">external
+xlink:href="https://www.w3.org/TR/REC-xml/#sec-external-ent">external
 entities</link>. This is well supported in processing tools and to
 some extent in authoring tools. Also
 entities and their references are not part of XDM so they do not
@@ -250,7 +250,7 @@ be declared only in the <quote>main</quote> document.</para>
 <title>XInclude</title>
 
 <para><link
-	  xlink:href="http://www.w3.org/TR/xinclude/">XInclude</link>
+	  xlink:href="https://www.w3.org/TR/xinclude/">XInclude</link>
 works very well for this use-case.</para>
 
 <example><title>Using XIncludes for modularized documents</title>
@@ -355,7 +355,7 @@ can be technically solved using XInclude. However XInclude usage is
 quite cumbersome. It seems that DocBook specific transclusion
 mechanism is needed. Proposal of such mechanism is now discussed by
 DocBook TC and it is available for wider review and comments at <link
-xlink:href="http://docbook.org/docs/transclusion/"/>.</para>
+xlink:href="https://docbook.org/docs/transclusion/"/>.</para>
 
 </section>
 

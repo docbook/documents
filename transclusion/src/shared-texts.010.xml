@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns="http://docbook.org/ns/docbook" version="5.0"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <info>
+    <title>Transclusions demo</title>
+  </info>
+  <para>The latest version of
+    <application><xi:include href="definitions.001.xml" xpointer="product-name" set-xml-id=""/></application> from
+    <xi:include href="definitions.001.xml" xpointer="corp-name" set-xml-id=""/>
+    is <xi:include href="definitions.001.xml" xpointer="product-version" set-xml-id=""/>.</para>
+  <para>You can buy <xi:include href="definitions.001.xml" xpointer="product-name" set-xml-id=""/> in our on-line store.</para>
+</article>

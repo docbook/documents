@@ -7,16 +7,17 @@
   <chapter xml:id="buy">
     <title>Buying printer</title>
     <para>Grab money, go to shop, ...</para>
+    <para>Do not forget to <link linkend="s1">insert paper</link>.</para>
   </chapter>
   <chapter>
     <title>Quick installation guide</title>
-    <para>Carefully follow all procedures below.</para>
-    <xi:include href="procedure.001.xml" trans:idfixup="suffix" trans:suffix="_install-proc"/>
+    <para>Carefully follow all procedures bellow.</para>
+    <xi:include href="procedure.001.xml" trans:idfixup="auto"/>
   </chapter>
   <chapter>
     <title>Maintenance</title>
     <para>Be friendly to your printer when you speak to it.</para>
-    <para>If the green led is blinking, please add paper using the following procedure.</para>
-    <xi:include href="procedure.001.xml" trans:idfixup="suffix" trans:suffix="_maintain-proc"/>
+    <para>If green led is blinking, please add missing paper using the following procedure.</para>
+    <xi:include href="procedure.001.xml" trans:idfixup="auto"/>
   </chapter>
 </book>
