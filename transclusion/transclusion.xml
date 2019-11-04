@@ -11,8 +11,10 @@
     </author>
     </authorgroup>
     <pubdate>2015-01-08</pubdate>
+<!--
     <pubdate>2011-04-20</pubdate>
     <pubdate>2010-12-09</pubdate>
+-->
   </info>
 
 <!-- TODO:
@@ -28,7 +30,7 @@ Add xml:id where possible
 for the DocBook transclusion mechanism. Please be aware that this is a
 working draft – everything described below might change or disappear
 completely. This proposal addresses the issues described in <citetitle
-xlink:href="http://docbook.org/docs/transclusion-requirements/">Requirements
+xlink:href="https://docbook.org/docs/transclusion-requirements/">Requirements
 for transclusion in DocBook</citetitle>.  The DocBook TC welcomes
 feedback on this draft, especially from users and developers of
 DocBook authoring and processing tools. Please direct your comments to
@@ -45,7 +47,7 @@ top of the XInclude. As a result transclusions were completely
 redesigned to be layered on top of XInclude 1.1.</para>
 <para>This resulted in a loss of some features. For example, it's no longer
 possible to locally redefine text replacement (see this <link
-xlink:href="http://docbook.org/docs/transclusion/2011-04-20/transclusion.html#d6e65">example</link> from the April 20, 2014 draft of this document).</para>
+xlink:href="https://docbook.org/docs/transclusion/2011-04-20/transclusion.html#d6e65">example</link> from the April 20, 2014 draft of this document).</para>
 </note>
 
 <para>The following namespace bindings are used as prefixes in this document:</para>
@@ -94,7 +96,7 @@ attributes from the <uri>http://docbook.org/ns/transclusion</uri>
 namespace. These attributes are typically inserted into a
 document by using the attribute copying feature of XInclude 1.1 <xref linkend="XI11"/>, which
 is described in section <citetitle
-xlink:href="http://www.w3.org/XML/2012/08/xinclude-11/Overview.html#attribute-copying">4.3
+xlink:href="https://www.w3.org/XML/2012/08/xinclude-11/Overview.html#attribute-copying">4.3
 Attribute Copying when processing XML</citetitle> of the XInclude 1.1 specification.</para>
 
 <para>The transclusion processor copies documents node by node. For most
@@ -263,7 +265,7 @@ namespace is considered a member of <property>IDREF-list</property> when its val
 
 <para>The most common transclusion scenario is reuse of shared strings
 (see <link
-xlink:href="http://docbook.org/docs/transclusion-requirements/transclusion-requirements.html#uc-1"/>). With
+xlink:href="https://docbook.org/docs/transclusion-requirements/transclusion-requirements.html#uc-1"/>). With
 XInclude 1.0 this could only be done using XPointer schemes that
 were not very interoperable. With XInclude 1.1, doing this is much easier.</para>
 
@@ -507,7 +509,7 @@ xlink:href="http://www.w3.org/TR/2013/CR-xinclude-11-20131008/"/></bibliomixed>
   W3C Last Call Working Draft.
   <pubdate>16 December 2014.</pubdate>
   <bibliosource>Available at <link
-xlink:href="http://www.w3.org/TR/2014/WD-xinclude-11-20141216/"/></bibliosource>.</bibliomixed>
+xlink:href="https://www.w3.org/TR/2014/WD-xinclude-11-20141216/"/></bibliosource>.</bibliomixed>
 
 </bibliography>
 
