@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.0">
+<info>
+  <title>DocBook Documents</title>
+  <pubdate>2021-05-11</pubdate>
+</info>
+
+<para>This repository contains specifications and other documentation related to
+DocBook. It currently contains:</para>
+
+<variablelist>
+<varlistentry>
+<term><link xlink:href="transclusion.html">DocBook Transclusion</link></term>
+<listitem>
+<para>The syntax, semantics, and processing model for the DocBook transclusion mechanism.
+</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><link xlink:href="transclusion-requirements.html">Requirements for transclusion in DocBook</link></term>
+<listitem>
+<para>A summary of uses-cases for transclusion of content in DocBook documents.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</article>

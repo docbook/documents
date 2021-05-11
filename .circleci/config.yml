@@ -1,0 +1,53 @@
+version: 2
+jobs:
+  build:
+    machine:
+      image: ubuntu-1604:202004-01
+
+    working_directory: ~/repo
+
+    environment:
+      JVM_OPTS: -Xmx16g
+      TERM: dumb
+
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "a4:29:41:ae:0a:cc:97:ed:77:e0:14:1f:9f:87:49:20"
+            - "b5:a7:db:c9:3d:9d:0b:c0:43:33:82:22:a1:7f:91:dc"
+
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "build.gradle" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: ./gradlew dependencies
+
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "build.gradle" }}
+
+      - run: ./gradlew specs
+
+      - persist_to_workspace:
+          root: build
+          paths:
+            - html
+
+      - store_artifacts:
+          path: build/html
+
+      - run: ./.circleci/publish-website.sh
+
+workflows:
+  version: 2
+  check:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore: gh-pages
