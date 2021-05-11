@@ -128,11 +128,11 @@ task resources(dependsOn: ["copyResources", "extractResources"]) {
 
 // ============================================================
 
-task specs(dependsOn: ['transclusion', 'transclusion_requirements']) {
+task specs(dependsOn: ['index', 'transclusion', 'transclusion_requirements']) {
   // nop
 }
 
-["transclusion", "transclusion-requirements"].each { src ->
+['index', 'transclusion', 'transclusion-requirements'].each { src ->
   def taskbase = src.replace('-','_')
 
   task "validate_${taskbase}"(
