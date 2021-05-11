@@ -274,7 +274,7 @@ were not very interoperable. With XInclude 1.1, doing this is much easier.</para
 <example xml:id="ex.1">
 <title>Definitions stored in a separate document (<filename>definitions.001.xml</filename>)</title>
 <programlisting><textobject>
-<textdata fileref='src/definitions.001.xml'/>
+<textdata fileref='examples/definitions.001.xml'/>
 </textobject></programlisting>
 </example>
 
@@ -284,11 +284,11 @@ In this example, the same definition is included twice. Because the ID attribute
 <example xml:id="ex.2">
 <title>Transclusion with duplicate IDs</title>
 <programlisting><textobject>
-<textdata fileref='src/shared-texts.003.xml'/>
+<textdata fileref='examples/shared-texts.003.xml'/>
 </textobject></programlisting>
 <para>Result of transclusion:</para>
 <programlisting><textobject>
-<textdata fileref='src/shared-texts.003.xml.out'/>
+<textdata fileref='examples/shared-texts.003.xml.out'/>
 </textobject></programlisting>
 </example>
 
@@ -299,11 +299,11 @@ attribute on included content. <xref linkend="ex.3"/> uses this attribute to avo
 <example xml:id="ex.3">
 <title>Using <tag class="attribute">set-xml-id</tag> to remove the top-level ID during transclusion</title>
 <programlisting><textobject>
-<textdata fileref='src/shared-texts.010.xml'/>
+<textdata fileref='examples/shared-texts.010.xml'/>
 </textobject></programlisting>
 <para>Result of transclusion:</para>
 <programlisting><textobject>
-<textdata fileref='src/shared-texts.010.xml.out'/>
+<textdata fileref='examples/shared-texts.010.xml.out'/>
 </textobject></programlisting>
 </example>
 
@@ -318,17 +318,17 @@ used to replace attributes of the same name, but no namespace, in the transclude
 <para>Consider section (<filename>section.001.xml</filename>), which is
 labeled for the Linux operating system (<code>os="linux"</code>).</para>
 <programlisting><textobject>
-<textdata fileref='src/section.001.xml'/>
+<textdata fileref='examples/section.001.xml'/>
 </textobject></programlisting>
 <para>Now we want to include this section in another document and pretend that
 it's actually targeted at a BSD system.</para>
 <programlisting><textobject>
-<textdata fileref='src/article.002.xml'/>
+<textdata fileref='examples/article.002.xml'/>
 </textobject></programlisting>
 <para>The value of the <code>local:os</code> attribute replaces the value of the
 <code>os</code> attribute during the XInclude process.</para>
 <programlisting><textobject>
-<textdata fileref='src/article.002.xml.out'/>
+<textdata fileref='examples/article.002.xml.out'/>
 </textobject></programlisting>
 </example>
 
@@ -360,7 +360,7 @@ contains one internal link and one external link.</para>
 <example xml:id="ex.5">
 <title>Module with sample procedure</title>
 <programlisting><textobject>
-<textdata fileref='src/procedure.001.xml'/>
+<textdata fileref='examples/procedure.001.xml'/>
 </textobject></programlisting>
 </example>
 
@@ -370,11 +370,11 @@ show how we can deal with the duplicate ID problem.</para>
 <example xml:id="ex.6">
 <title>Automatic ID/IDREF adjustment</title>
 <programlisting><textobject>
-<textdata fileref='src/book.002.xml'/>
+<textdata fileref='examples/book.002.xml'/>
 </textobject></programlisting>
 <para>Result of transclusion:</para>
 <programlisting><textobject>
-<textdata fileref='src/book.002.xml.out'/>
+<textdata fileref='examples/book.002.xml.out'/>
 </textobject></programlisting>
 </example>
 <para>Specifying <tag class="attribute">db:idfixup</tag> triggers
@@ -390,11 +390,11 @@ procedure links to step 1 in the first procedure.</para>
 <example xml:id="ex.7">
 <title>Global linkscope</title>
 <programlisting><textobject>
-<textdata fileref='src/book.003.xml'/>
+<textdata fileref='examples/book.003.xml'/>
 </textobject></programlisting>
 <para>Result of transclusion:</para>
 <programlisting><textobject>
-<textdata fileref='src/book.003.xml.out'/>
+<textdata fileref='examples/book.003.xml.out'/>
 </textobject></programlisting>
 </example>
 <para><xref linkend="ex.8"/> uses <literal>db:linkscope="local"</literal> on
@@ -408,11 +408,11 @@ transcluding foreign content and want to isolate its links from the rest of your
 <example xml:id="ex.8">
 <title>Local linkscope</title>
 <programlisting><textobject>
-<textdata fileref='src/book.004.xml'/>
+<textdata fileref='examples/book.004.xml'/>
 </textobject></programlisting>
 <para>Result of transclusion:</para>
 <programlisting><textobject>
-<textdata fileref='src/book.004.xml.out'/>
+<textdata fileref='examples/book.004.xml.out'/>
 </textobject></programlisting>
 </example>
 
@@ -426,11 +426,11 @@ specification?</remark>
 <example xml:id="ex.9">
 <title>Manually assigned suffix</title>
 <programlisting><textobject>
-<textdata fileref='src/book.005.xml'/>
+<textdata fileref='examples/book.005.xml'/>
 </textobject></programlisting>
 <para>Result of transclusion:</para>
 <programlisting><textobject>
-<textdata fileref='src/book.005.xml.out'/>
+<textdata fileref='examples/book.005.xml.out'/>
 </textobject></programlisting>
 </example>
 
@@ -439,11 +439,11 @@ Thus, the resulting document in <xref linkend="ex.10"/> contains duplicate IDs a
 <example xml:id="ex.10">
 <title>Disabling ID fixup</title>
 <programlisting><textobject>
-<textdata fileref='src/book.006.xml'/>
+<textdata fileref='examples/book.006.xml'/>
 </textobject></programlisting>
 <para>Result of transclusion:</para>
 <programlisting><textobject>
-<textdata fileref='src/book.006.xml.out'/>
+<textdata fileref='examples/book.006.xml.out'/>
 </textobject></programlisting>
 </example>
 
@@ -452,22 +452,22 @@ Thus, the resulting document in <xref linkend="ex.10"/> contains duplicate IDs a
 <para>Suppose we have note in a separate file
 (<filename>note.001.xml</filename>):</para>
 <programlisting><textobject>
-<textdata fileref='src/note.001.xml'/>
+<textdata fileref='examples/note.001.xml'/>
 </textobject></programlisting>
 <para>We transclude it into another file
 (<filename>procedure.002.xml</filename>) assigning a suffix manually:</para>
 <programlisting><textobject>
-<textdata fileref='src/procedure.002.xml'/>
+<textdata fileref='examples/procedure.002.xml'/>
 </textobject></programlisting>
 <para>Then we transclude this procedure into a master document,
 again with a manually specified suffix:</para>
 <programlisting><textobject>
-<textdata fileref='src/book.012.xml'/>
+<textdata fileref='examples/book.012.xml'/>
 </textobject></programlisting>
 <para>The result is that the ID in the transcluded note contains a chained
 suffix <quote>note_procedure002_note001</quote>:</para>
 <programlisting><textobject>
-<textdata fileref='src/book.012.xml.out'/>
+<textdata fileref='examples/book.012.xml.out'/>
 </textobject></programlisting>
 </example>
 
@@ -480,7 +480,7 @@ suffix <quote>note_procedure002_note001</quote>:</para>
 
 <!--
 <programlisting><textobject>
-<textdata fileref='src/db-transclusions.rnc'/>
+<textdata fileref='examples/db-transclusions.rnc'/>
 </textobject></programlisting>
 -->
 
@@ -493,24 +493,18 @@ suffix <quote>note_procedure002_note001</quote>:</para>
 feature complete. It supports only a subset of the proposal.</para>
 
 <programlisting><textobject>
-<textdata fileref='src/transclude.xsl'/>
+<textdata fileref='examples/transclude.xsl'/>
 </textobject></programlisting>
 
 </appendix>
 
 <bibliography xml:id="bibliography">
-<!--
-<bibliomixed xml:id="XI11"><title>XML Inclusions (XInclude) Version 1.1</title>. W3C
-Candidate Recommendation. 8 October 2013. Available at <link
-xlink:href="http://www.w3.org/TR/2013/CR-xinclude-11-20131008/"/></bibliomixed>
--->
 <bibliomixed xml:id="XI11">
   <title>XML Inclusions (XInclude) Version 1.1</title>.
-  W3C Last Call Working Draft.
-  <pubdate>16 December 2014.</pubdate>
-  <bibliosource>Available at <link
-xlink:href="https://www.w3.org/TR/2014/WD-xinclude-11-20141216/"/></bibliosource>.</bibliomixed>
-
+  W3C Working Group Note.
+  <pubdate>21 July 2016.</pubdate>
+  <bibliosource>Available at
+  <link xlink:href="https://www.w3.org/TR/xinclude-11/"/></bibliosource>.</bibliomixed>
 </bibliography>
 
 </article>

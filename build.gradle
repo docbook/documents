@@ -1,0 +1,178 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath group: 'org.apache.ivy', name: 'ivy', version: '2.5.0'
+  }
+}
+
+plugins {
+  id "java"
+  id "groovy"
+  //id 'com.github.eerohele.saxon-gradle' version '0.9.0-beta3'
+  //id 'com.nwalsh.saxon-gradle' version '0.9.1-beta2'
+  id 'com.nwalsh.saxon-gradle'
+  id "de.undercouch.download" version "4.0.4"
+}
+
+//import com.github.eerohele.SaxonXsltTask
+import com.nwalsh.SaxonXsltTask
+
+import de.undercouch.gradle.tasks.download.Download
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+  maven {
+    url "https://dev.saxonica.com/maven"
+  }
+}
+
+configurations.all {
+  resolutionStrategy {
+    force 'xml-apis:xml-apis:1.4.01',
+      "${saxonGroup}:${saxonEdition}:${saxonVersion}"
+  }
+}
+
+configurations {
+  validateRuntime.extendsFrom(implementation)
+}
+
+dependencies {
+  implementation (
+    [group: saxonGroup, name: saxonEdition, version: saxonVersion],
+    [group: 'org.relaxng', name: 'jing', version: jingVersion ],
+    [group: 'org.xmlresolver', name: 'xmlresolver', version: xmlresolverVersion],
+    [group: 'com.nwalsh', name: 'sinclude', version: sincludeVersion ],
+    [group: 'org.docbook', name: 'docbook-xslTNG', version: docbookXslTngVersion]
+  )
+}
+
+wrapper {
+    gradleVersion = '7.0'
+}
+
+saxon.configure {
+  classpath configurations.validateRuntime
+  entityResolverClass "org.xmlresolver.Resolver"
+  uriResolverClass "org.xmlresolver.Resolver"
+  sourceSaxParser "org.xmlresolver.tools.ResolvingXMLReader"
+  stylesheetSaxParser "org.xmlresolver.tools.ResolvingXMLReader"
+  initializer 'org.docbook.xsltng.extensions.Register'
+}
+
+defaultTasks 'specs'
+
+def schemaPath = "docbook"
+def schema = "docbook"
+def schemaVersion = docbookVersion
+
+task setupDocBook(type: Download) {
+  src "${docbookBaseURI}/${docbookVersion}/docbook-${docbookVersion}.zip"
+  dest file("${buildDir}/docbook-${docbookVersion}.zip")
+  doFirst {
+    mkdir(buildDir)
+  }
+  doLast {
+    copy {
+      from zipTree("${buildDir}/docbook-${docbookVersion}.zip")
+      into buildDir
+    }
+  }
+  onlyIf { !file("${buildDir}/docbook-${docbookVersion}/catalog.xml").exists() }
+}
+
+task setup_docbook(dependsOn: "setupDocBook") {
+  // just an alias for computed reference
+}
+
+// ============================================================
+// Find the DocBook xslTNG jar file
+def xslTNGjar = null
+configurations.validateRuntime.each { file ->
+  String path = file.getAbsolutePath()
+  if (xslTNGjar == null && path.endsWith(".jar")
+      && path.contains("docbook-xslTNG/${docbookXslTngVersion}")) {
+    xslTNGjar = path
+  }
+}
+
+if (xslTNGjar == null) {
+  task extractResources() {
+    doLast {
+      println("Failed to find DocBook xslTNG jar file; can't get resources.")
+    }
+  }
+} else {
+  task extractResources(type: Copy) {
+    into "${buildDir}/html"
+    from zipTree(xslTNGjar).matching { include 'org/docbook/xsltng/resources/**/*' }
+    eachFile { fcp ->
+      fcp.path = fcp.path.replaceFirst('org/docbook/xsltng/resources/', '')
+    }
+    includeEmptyDirs = false
+  }
+}
+
+task copyResources(type: Copy) {
+  from "${projectDir}/src/main/resources"
+  into "${buildDir}/html"
+}
+
+task resources(dependsOn: ["copyResources", "extractResources"]) {
+  // nop 
+}
+
+// ============================================================
+
+task specs(dependsOn: ['transclusion', 'transclusion_requirements']) {
+  // nop
+}
+
+["transclusion", "transclusion-requirements"].each { src ->
+  def taskbase = src.replace('-','_')
+
+  task "validate_${taskbase}"(
+    dependsOn: ["setupDocBook"],
+    description: "Validate ${src} specification"
+  ) {
+    inputs.file "${projectDir}/src/main/xml/${src}.xml"
+    outputs.file "${buildDir}/validated/${src}.xml"
+
+    doLast {
+      javaexec {
+        classpath = configurations.validateRuntime
+        main = "com.thaiopensource.relaxng.util.Driver"
+        args "-i", "${buildDir}/${schemaPath}-${schemaVersion}/rng/${schema}.rng",
+          "${projectDir}/src/main/xml/${src}.xml"
+      }
+    }
+
+    doLast {
+      new File("${buildDir}/validated/${src}.xml").withWriter("utf-8") { writer ->
+        writer.writeLine("validated")
+      }
+    }
+  }
+
+  task "${taskbase}"(
+    type: SaxonXsltTask,
+    dependsOn: ["validate_${taskbase}", "resources"],
+    description: "Format ${src} specification"
+  ) {
+    inputs.files fileTree(dir: "${projectDir}/src/main/xml")
+
+    input "${projectDir}/src/main/xml/${src}.xml"
+    stylesheet "${projectDir}/tools/style.xsl"
+    output "${buildDir}/html/${src}.html"
+  }
+}
+
+task helloWorld() {
+  doLast {
+    println('Hello, world')
+  }
+}
