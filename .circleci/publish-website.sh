@@ -3,7 +3,7 @@
 if [[ -v CIRCLE_TAG ]]; then
     echo "Deploying website updates for $CIRCLE_TAG"
 else
-    if [ "$CIRCLE_BRANCH" = "main" ]; then
+    if [ "$CIRCLE_BRANCH" = "master" ]; then
         echo "Deploying website updates for main branch"
     else
         echo "Website updates are not published for $CIRCLE_BRANCH commits"
