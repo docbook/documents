@@ -1,0 +1,8 @@
+/* Overrides for the Transclusion documents */
+
+/* I think the boxes around code fragments are distracting */
+code {
+    background-color: inherit;
+    border: none;
+    padding: inherit;
+}
