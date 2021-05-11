@@ -1,0 +1,7 @@
+# Tell CircleCI to ignore this branch
+version: 2
+jobs:
+  build:
+    branches:
+      ignore:
+        - gh-pages
