@@ -45,9 +45,9 @@ rm /tmp/html.$$.tar.gz
 # Push the changes back to the repo
 git status
 
-#git add .
-#git commit -m "Deploy gh-pages for ${CIRCLE_PROJECT_USERNAME}: ${SHA}"
-#git push -q origin HEAD
+git add .
+git commit -m "Deploy gh-pages for ${CIRCLE_PROJECT_USERNAME}: ${SHA}"
+git push -q origin HEAD
 
 # Go back to the master branch
 git checkout master
