@@ -1,8 +1,31 @@
 /* Overrides for the Transclusion documents */
 
+@import url("https://fonts.googleapis.com/css?family=EB+Garamond&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=PT+Mono&display=swap");
+
+:root {
+    --body-family: "EB Garamond", serif;
+    --verbatim-odd-background-color: #fafafa;
+    --verbatim-even-background-color: #fafafa;
+    --docbook-green: rgb(4,164,165);
+    -moz-osx-font-smoothing: grayscale;
+    max-width: inherit;
+}
+
+html {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
 /* I think the boxes around code fragments are distracting */
 code {
     background-color: inherit;
     border: none;
     padding: inherit;
+}
+
+.revhistory table tr td ul {
+    padding-top: 0;
+    margin-top: 0;
 }
