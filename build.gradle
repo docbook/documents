@@ -1,25 +1,39 @@
 buildscript {
   repositories {
+    mavenLocal()
     mavenCentral()
+    maven { url "https://dev.saxonica.com/maven" }
+  }
+
+  configurations.all {
+    resolutionStrategy {
+      force 'xml-apis:xml-apis:1.4.01',
+        "${saxonGroup}:${saxonEdition}:${saxonVersion}",
+        "org.xmlresolver:xmlresolver:${xmlresolverVersion}",
+        "com.nwalsh:sinclude:${sincludeVersion}"
+    }
   }
 
   dependencies {
-    classpath group: 'org.apache.ivy', name: 'ivy', version: '2.5.0'
+    classpath group: saxonGroup, name: saxonEdition, version: saxonVersion
+    classpath group: 'com.nwalsh', name: 'sinclude', version: sincludeVersion
+    classpath group: 'org.xmlresolver', name: 'xmlresolver', version: xmlresolverVersion
+    classpath group: 'org.docbook', name: 'schemas-docbook', version: docbookVersion
+    classpath group: 'org.docbook', name: 'docbook-xslTNG', version: docbookXslTngVersion
   }
 }
 
 plugins {
   id "java"
   id "groovy"
-  //id 'com.github.eerohele.saxon-gradle' version '0.9.0-beta3'
-  //id 'com.nwalsh.saxon-gradle' version '0.9.1-beta2'
-  id 'com.nwalsh.saxon-gradle'
+  id 'com.nwalsh.gradle.saxon.saxon-gradle' version '0.9.6'
   id "de.undercouch.download" version "4.0.4"
 }
 
-//import com.github.eerohele.SaxonXsltTask
-import com.nwalsh.SaxonXsltTask
+sourceCompatibility=1.8
+targetCompatibility=1.8
 
+import com.nwalsh.gradle.saxon.SaxonXsltTask
 import de.undercouch.gradle.tasks.download.Download
 
 repositories {
@@ -33,7 +47,8 @@ repositories {
 configurations.all {
   resolutionStrategy {
     force 'xml-apis:xml-apis:1.4.01',
-      "${saxonGroup}:${saxonEdition}:${saxonVersion}"
+      "${saxonGroup}:${saxonEdition}:${saxonVersion}",
+      "org.xmlresolver:xmlresolver:${xmlresolverVersion}"
   }
 }
 
@@ -56,12 +71,10 @@ wrapper {
 }
 
 saxon.configure {
-  classpath configurations.validateRuntime
-  entityResolverClass "org.xmlresolver.Resolver"
-  uriResolverClass "org.xmlresolver.Resolver"
-  sourceSaxParser "org.xmlresolver.tools.ResolvingXMLReader"
-  stylesheetSaxParser "org.xmlresolver.tools.ResolvingXMLReader"
-  initializer 'org.docbook.xsltng.extensions.Register'
+}
+
+saxon.configure("docbook") {
+  //initializer 'org.docbook.xsltng.extensions.Register'
 }
 
 defaultTasks 'specs'
@@ -69,6 +82,57 @@ defaultTasks 'specs'
 def schemaPath = "docbook"
 def schema = "docbook"
 def schemaVersion = docbookVersion
+
+import static groovy.io.FileType.DIRECTORIES
+def pygmentize = findPygmentize()
+def findPygmentize() {
+  def path = System.getenv()["PATH"]
+  def script = null
+  path.split(":+").each { segment ->
+    if (script == null) {
+      def testfile = new File("${segment}/pygmentize")
+      if (testfile.exists() && testfile.canExecute()) {
+        script = testfile.toString()
+      }
+
+      if (segment.endsWith("/.pyenv/shims")) {
+        // Ok, we found pyenv, now can we find pygmentize?
+        def pyenv = new File("${segment.substring(0, segment.length() - 6)}/versions")
+        def versions = []
+        pyenv.traverse(type: DIRECTORIES, maxDepth: 0) { dir ->
+          testfile = new File("${dir}/bin/pygmentize")
+          if (testfile.exists() && testfile.canExecute()) {
+            script = testfile.toString()
+          }
+        }
+      }
+    }
+  }
+
+  if (script == null) {
+    println("Could not find pygmentize")
+    script = "" // nevermind
+  } else {
+    println("Using Pygments from ${script}")
+  }
+
+  return script
+}
+
+// This is all a complete hack that I worked out by trial and error
+def EXCP="${projectDir}/build/classes/java/main"
+configurations.compileClasspath.each { it ->
+  EXCP += ":" + it
+}
+
+
+// Set system properties
+//System.setProperty("xml.catalog.logging", "*:warn")
+//System.setProperty("xml.catalog.additions", "classpath:org/docbook/xsltng/catalog.xml")
+System.setProperty("org.docbook.xsltng.verbose", verbose)
+System.setProperty("org.docbook.extensions.pygmentize", pygmentize)
+
+println("Using Java version ${System.getProperty('java.version')}")
 
 task setupDocBook(type: Download) {
   src "${docbookBaseURI}/${docbookVersion}/docbook-${docbookVersion}.zip"
@@ -128,7 +192,8 @@ task resources(dependsOn: ["copyResources", "extractResources"]) {
 
 // ============================================================
 
-task specs(dependsOn: ['index', 'transclusion', 'transclusion_requirements']) {
+task specs(dependsOn: ['index', 'transclusion', 'transclusion_requirements',
+                       'iso690']) {
   // nop
 }
 
@@ -165,14 +230,63 @@ task specs(dependsOn: ['index', 'transclusion', 'transclusion_requirements']) {
   ) {
     inputs.files fileTree(dir: "${projectDir}/src/main/xml")
 
+    def style = "${projectDir}/tools/style.xsl"
+    if (taskbase == "index") {
+      style = "${projectDir}/tools/homepage.xsl"
+    }
+
+    pluginConfiguration "docbook"
     input "${projectDir}/src/main/xml/${src}.xml"
-    stylesheet "${projectDir}/tools/style.xsl"
+    stylesheet style
     output "${buildDir}/html/${src}.html"
   }
+}
+
+task "validate_iso690"(
+  dependsOn: ["setupDocBook"],
+  description: "Validate ISO 690 document"
+) {
+  inputs.file "${projectDir}/src/main/xml/iso690/ISO690.xml"
+  outputs.file "${buildDir}/validated/ISO690.xml"
+
+  doLast {
+    javaexec {
+      classpath = configurations.validateRuntime
+      main = "com.thaiopensource.relaxng.util.Driver"
+      args "-i", "${buildDir}/${schemaPath}-${schemaVersion}/rng/${schema}xi.rng",
+        "${projectDir}/src/main/xml/iso690/ISO690.xml"
+    }
+  }
+
+  doLast {
+    new File("${buildDir}/validated/ISO690.xml").withWriter("utf-8") { writer ->
+      writer.writeLine("validated")
+    }
+  }
+}
+
+task "iso690"(
+  type: SaxonXsltTask,
+  dependsOn: ["validate_iso690", "resources"],
+  description: "Format ISO 690 document"
+) {
+  inputs.files fileTree(dir: "${projectDir}/src/main/xml/iso690")
+
+  initializer "org.docbook.xsltng.extensions.Register"
+
+  def style = "${projectDir}/tools/style.xsl"
+
+  pluginConfiguration "docbook"
+  input "${projectDir}/src/main/xml/iso690/ISO690.xml"
+  stylesheet style
+  output "${buildDir}/html/iso690.html"
 }
 
 task helloWorld() {
   doLast {
     println('Hello, world')
+    configurations.validateRuntime.each { path ->
+      println("CP: ${path}")
+    }
   }
 }
