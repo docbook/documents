@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+/* CSS Stylesheet for _DocBook: The Definitive Guide_
+ * Copyright © 2010, 2011, 2020 Norman Walsh.
+ */
+
+@import url("https://fonts.googleapis.com/css?family=EB+Garamond&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=PT+Mono&display=swap");
+
+:root {
+    --body-family: "EB Garamond", serif;
+    --verbatim-odd-background-color: #fafafa;
+    --verbatim-even-background-color: #fafafa;
+    --docbook-green: rgb(4,164,165);
+    -moz-osx-font-smoothing: grayscale;
+    max-width: inherit;
+}
+
+html {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+body {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+main {
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    padding-top: 6rem;
+}
+
+main > div,
+main > article {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+/* html.css (in Firefox?) fiddles with heading sizes when
+   the parent is a article, aside, nav, or section. WTF? */
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    background-color: var(--docbook-green);
+    color: white;
+}
+
+h1 div.center {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40rem;
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.25em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5 {
+    font-size: 1.0em;
+}
+
+body.home nav.top {
+    display: block;
+}

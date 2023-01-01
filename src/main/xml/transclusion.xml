@@ -9,9 +9,15 @@
         <surname>Kosek</surname></personname>
       <email>jirka@kosek.cz</email>
     </author>
+    <author>
+      <personname><firstname>Norman</firstname>
+        <surname>Walsh</surname></personname>
+      <email>ndw@nwalsh.com</email>
+    </author>
     </authorgroup>
-    <pubdate>2015-01-08</pubdate>
+    <pubdate>2021-05-12</pubdate>
 <!--
+    <pubdate>2015-01-08</pubdate>
     <pubdate>2011-04-20</pubdate>
     <pubdate>2010-12-09</pubdate>
 -->
@@ -476,16 +482,26 @@ suffix <quote>note_procedure002_note001</quote>:</para>
 <appendix xml:id="schema">
 <title>DocBook schema with support for transclusions</title>
 
-<para>TBD</para>
+<para>The following customization layer allows transclusion attributes in
+DocBook. No changes are required for XInclude which already allows arbitrary namespaced
+attributes.</para>
 
-<!--
-<programlisting><textobject>
-<textdata fileref='examples/db-transclusions.rnc'/>
-</textobject></programlisting>
--->
+<programlisting><![CDATA[namespace rng = "http://relaxng.org/ns/structure/1.0"
+namespace db = "http://docbook.org/ns/docbook"
+namespace trans = "http://docbook.org/ns/transclusion"
+default namespace = "http://docbook.org/ns/docbook"
+
+include "docbookxi.rnc" {
+  db.common.base.attributes |= (db.trans.idfixup? & db.trans.suffix? & db.trans.linkscope?)
+}
+
+db.trans.idfixup = attribute trans:idfixup { "none" | "suffix" | "auto" }
+db.trans.suffix = attribute trans:suffix { text }
+db.trans.linkscope = attribute trans:linkscope { "user" | "local" | "near" | "global" }]]></programlisting>
 
 </appendix>
 
+<!--
 <appendix xml:id="transclusion-processor">
 <title>Sample transclusion processor written in XSLT 2.0</title>
 
@@ -496,6 +512,29 @@ feature complete. It supports only a subset of the proposal.</para>
 <textdata fileref='examples/transclude.xsl'/>
 </textobject></programlisting>
 
+</appendix>
+-->
+
+<appendix>
+<title>Change log</title>
+
+<revhistory>
+<revision>
+<date>2021-05-12</date>
+<authorinitials>ndw</authorinitials>
+<revdescription>
+<itemizedlist>
+<listitem>
+<para>Removed the “sample transclusion processor” appendix as it was incomplete
+and buggy.</para>
+</listitem>
+<listitem>
+<para>Added the sample schema in <xref linkend="schema"/>.</para>
+</listitem>
+</itemizedlist>
+</revdescription>
+</revision>
+</revhistory>
 </appendix>
 
 <bibliography xml:id="bibliography">
