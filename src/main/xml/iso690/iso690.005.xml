@@ -1,0 +1,21 @@
+<biblioentry xmlns="http://docbook.org/ns/docbook"
+             role="article" version="5.0">
+  <biblioset relation="article">
+    <author>
+      <personname>
+	<surname>Weaver</surname>
+	<firstname>William</firstname>
+      </personname>
+    </author>
+    <title>The collectors</title>
+    <subtitle>command performances</subtitle>
+    <bibliomisc role="secondary">Photography by Robert Emmett Bright</bibliomisc>
+  </biblioset>
+  <biblioset relation="journal">
+    <title>Architectural Digest</title>
+    <pubdate>December 1985</pubdate>
+    <volumenum>vol. 42</volumenum>
+    <issuenum>no. 12</issuenum>
+    <pagenums>p. 126-133</pagenums>
+  </biblioset>
+</biblioentry>
