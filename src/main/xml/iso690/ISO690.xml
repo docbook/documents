@@ -1,0 +1,1123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://docbook.org/ns/docbook"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         version="5.0">
+<info>
+  <title>Bibliography according to ISO 690 and ISO 690-2 standards</title>
+  <author>
+    <personname>
+      <firstname>Jana</firstname>
+      <surname>Dvořáková</surname>
+    </personname>
+  </author>
+  <editor>
+    <personname>
+      <firstname>Norm</firstname>
+      <surname>Tovey-Walsh</surname>
+    </personname>
+  </editor>
+  <style xmlns="http://www.w3.org/1999/xhtml">
+    table tr td:first-child + td { white-space: nowrap; }
+    main { padding-bottom: 2rem; }
+  </style>
+</info>
+
+<note>
+<title>Editor’s notes</title>
+<para>Evidence suggests that this document was published on
+the DocBook wiki circa 2012. The contents of the wiki from that time
+have been lost, but a version of this document was posted in an
+<link xlink:href="https://markmail.org/thread/kcmb7z2tzue3pw3m">email
+thread</link> from March, 2012.
+</para>
+<para>This XML version of the document has been recreated from that
+post. The editor has amended the table formatting slightly and updated
+the examples to DocBook v5.0. The document is otherwise (intended to be)
+unchanged.</para>
+</note>
+
+<section>
+<title>Introduction</title>
+
+<para>Examples are adapted from ISO 690 and ISO 690-2 standards.</para>
+
+<para>Elements marked with * are optional,
++ marks mandatory elements for online documents
+and optional for others.</para>
+</section>
+
+<section>
+<title>Monographs</title>
+
+<para>Non-serial bibliographic item, i.e. an item either complete in
+one part or complete (or intended to be completed) in a finite number
+of separate parts.</para>
+
+<informaltable>
+<tgroup cols="3" rowsep="1">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
+<thead>
+<row>
+<entry/><entry colsep="1">Element</entry>
+<entry>Example</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry/><entry colsep="1">Primary responsibility</entry>
+<entry>LOMINADZE, DG.</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title</entry>
+<entry><emphasis>Cyclotron waves in plasma</emphasis>
+</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Subordinate responsibility</entry>
+<entry>Translated by AN. Dellis; edited by SM. Hamberger</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Edition</entry>
+<entry>1st ed.</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Place of publication</entry>
+<entry>Oxford</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Publisher</entry>
+<entry>Pergamon Press</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Year of publication</entry>
+<entry>1981</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Extent</entry>
+<entry>206 p.</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Series</entry>
+<entry>International series in natural philosophy</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Notes</entry>
+<entry>Translation of: Ciklotronnye volny v plasme</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Standard number</entry>
+<entry>ISBN 0-08-021680-3</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<example>
+<title>DocBook source code</title>
+<programlisting language="xml"><xi:include href="iso690.001.xml" parse="text"/></programlisting>
+</example>
+
+<example>
+<title>Output according to ISO 690 standard</title>
+<para>LOMINADZE, DG.
+<emphasis>Cyclotron waves in plasma</emphasis>.
+Translated by AN. Dellis; edited by SM. Hamberger.
+1st ed.
+Oxford: Pergamon Press, 1981.
+206 p.
+International series in natural philosophy.
+Translation of: Ciklotronnye volny v plasme.
+ISBN 0-08-021680-3.</para>
+</example>
+</section>
+
+<section>
+<title>Serials</title>
+
+<para>Publication, in any medium, issued in successive parts, usually
+having numeric or chronological designations, and intended to be
+continued indefinitely.</para>
+
+<informaltable>
+<tgroup cols="3" rowsep="1">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
+<thead>
+<row>
+<entry/><entry colsep="1">Element</entry>
+<entry>Example</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry/><entry colsep="1">Title</entry>
+<entry><emphasis>Communications equipment manufacturers</emphasis>
+</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Responsibility</entry>
+<entry>Manufacturing and Primary Industries Division, Statistics Canada</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Edition</entry>
+<entry>Preliminary edition</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Issue designation (date and/or n°)</entry>
+<entry>1970- </entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Place of publication</entry>
+<entry>Ottawa</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Publisher</entry>
+<entry>Statistics Canada</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Year of publication</entry>
+<entry>1971- </entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Series</entry>
+<entry>Annual census of manufacturers</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Notes</entry>
+<entry>Text in English and French</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Standard number</entry>
+<entry>ISSN 0700-0758</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<example>
+<title>DocBook source code</title>
+<programlisting language="xml"><xi:include href="iso690.002.xml" parse="text"/></programlisting>
+</example>
+
+<example>
+<title>Output according to ISO 690 standard</title>
+<para><emphasis>Communications equipment manufacturers</emphasis>.
+Manufacturing and Primary Industries Division, Statistics Canada.
+Preliminary edition.
+1970- .
+Ottawa: Statistics Canada, 1971- .
+Annual census of manufacturers.
+Text in English and French.
+ISSN 0700-0758.
+</para>
+</example>
+</section>
+
+<section>
+<title>Parts of monographs</title>
+
+<informaltable>
+<tgroup cols="3" rowsep="1">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
+<thead>
+<row>
+<entry/><entry colsep="1">Element</entry>
+<entry>Example</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry/><entry colsep="1">Primary responsibility</entry>
+<entry>PARKER, TJ. and HASWELL, WD.</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title of host document</entry>
+<entry><emphasis>A text-book of zoology</emphasis>
+</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Edition</entry>
+<entry>5th ed.</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Numeration of the part</entry>
+<entry>vol. 1</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Subordinate responsibility</entry>
+<entry>revised by WD. Lang</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Place of publication</entry>
+<entry>London</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Publisher</entry>
+<entry>Macmillan</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Year of publication</entry>
+<entry>1930</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Location within host</entry>
+<entry>Section 12, Phylum Mollusca, p. 663-782</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<example>
+<title>DocBook source code</title>
+<programlisting language="xml"><xi:include href="iso690.003.xml" parse="text"/></programlisting>
+</example>
+
+<example>
+<title>Output according to ISO 690 standard</title>
+<para>PARKER, TJ. and HASWELL, WD.
+<emphasis>A text-book of zoology</emphasis>.
+5th ed.,
+vol. 1.
+revised by WD. Lang.
+London: Macmillan, 1930.
+Section 12, Phylum Mollusca, p. 663-782.
+</para>
+</example>
+</section>
+
+<section>
+<title>Contributions to monographs</title>
+
+<para>Contribution is independent unit forming part of a document.</para>
+
+<informaltable>
+<tgroup cols="3" rowsep="1">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
+<thead>
+<row>
+<entry/><entry colsep="1">Element</entry>
+<entry>Example</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry namest="c1" nameend="c3">for contribution:</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Primary responsibility</entry>
+<entry>WRIGLEY, EA.</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title</entry>
+<entry>Parish registers and the historian</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c3">for host:</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Primary responsibility</entry>
+<entry>STEEL, DJ.</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title</entry>
+<entry><emphasis>National index of parish registers</emphasis>
+</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Edition</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Place of publication</entry>
+<entry>London</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Publisher</entry>
+<entry>Society of Genealogists</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Year of publication</entry>
+<entry>1968</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Location within host</entry>
+<entry>vol. 1, p. 155-167</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<example>
+<title>DocBook source code</title>
+<programlisting language="xml"><xi:include href="iso690.004.xml" parse="text"/></programlisting>
+</example>
+
+<example>
+<title>Output according to ISO 690 standard</title>
+<para>WRIGLEY, EA.
+Parish registers and the historian.
+In
+STEEL, DJ.
+<emphasis>National index of parish registers</emphasis>.
+London: Society of Genealogists, 1968,
+vol. 1, p. 155-167.
+</para>
+</example>
+</section>
+
+<section>
+<title>Articles, etc., in serials</title>
+
+<informaltable>
+<tgroup cols="3" rowsep="1">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
+<thead>
+<row>
+<entry/><entry colsep="1">Element</entry>
+<entry>Example</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry/><entry colsep="1">Primary responsibility</entry>
+<entry>WEAVER, William</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title</entry>
+<entry>The collectors: command performances</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Subordinate responsibility</entry>
+<entry>Photography by Robert Emmett Bright</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title of host document</entry>
+<entry><emphasis>Architectural Digest</emphasis>
+</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Edition</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry namest="c1" nameend="c3">Location within host:</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Year, Issue designation, Pagination of the part</entry>
+<entry>December 1985, vol. 42, no. 12, p. 126-133</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<example>
+<title>DocBook source code</title>
+<programlisting language="xml"><xi:include href="iso690.005.xml" parse="text"/></programlisting>
+</example>
+
+<example>
+<title>Output according to ISO 690 standard</title>
+<para>WEAVER, William.
+The collectors: command performances.
+Photography by Robert Emmett Bright.
+<emphasis>Architectural Digest</emphasis>.
+December 1985, vol. 42, no. 12, p. 126-133.
+</para>
+</example>
+</section>
+
+<section>
+<title>Patent documents</title>
+
+<informaltable>
+<tgroup cols="3" rowsep="1">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
+<thead>
+<row>
+<entry/><entry colsep="1">Element</entry>
+<entry>Example</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry>*</entry><entry colsep="1">Primary responsibility (applicant)</entry>
+<entry>Carl Zeiss Jena, VEB</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Title of the invention</entry>
+<entry><emphasis>Anordnung zur lichtelektrischen Erfassung der Mitte eines Lichtfeldes</emphasis>
+</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Subordinate responsibility</entry>
+<entry>Erfinder: W. FEIST, C. WAHNERT, E. FEISTAUER</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Notes</entry>
+<entry>Int. Cl.<superscript>3</superscript>: G02 B 27/14</entry>
+</row>
+<row>
+<entry namest="c1" nameend="c3">Identification:</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Country or issuing office</entry>
+<entry>Schweiz</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Kind of patent document</entry>
+<entry>Patentschrift</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Number</entry>
+<entry>608 626</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Date of publication of cited document</entry>
+<entry>1979-01-15</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<example>
+<title>DocBook source code</title>
+<programlisting language="xml"><xi:include href="iso690.006.xml" parse="text"/></programlisting>
+</example>
+
+<example>
+<title>Output according to ISO 690 standard</title>
+<para>CARL ZEISS JENA, VEB.
+<emphasis>Anordnung zur lichtelektrischen Erfassung der Mitte eines Lichtfeldes</emphasis>.
+Erfinder: W. FEIST, C. WAHNERT, E. FEISTAUER.
+Int. Cl.<superscript>3</superscript>: G02 B 27/14.
+<emphasis>Schweiz
+Patentschrift</emphasis>,
+608 626.
+1979-01-15.
+</para>
+</example>
+</section>
+
+<section>
+<title>Monographs, databases and computer programs</title>
+
+<section>
+<title>Entire document</title>
+
+<informaltable>
+<tgroup cols="3" rowsep="1">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
+<thead>
+<row>
+<entry/><entry colsep="1">Element</entry>
+<entry>Example</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry/><entry colsep="1">Primary responsibility</entry>
+<entry>CARROLL, Lewis</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title</entry>
+<entry><emphasis>Alice's Adventures in Wonderland</emphasis>
+</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Type of medium</entry>
+<entry>[online]</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Subordinate responsibility</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry/><entry colsep="1">Edition</entry>
+<entry>Textinfo ed. 2.1</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Place of publication</entry>
+<entry>[Dortmund, Germany]</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Publisher</entry>
+<entry>Windspiel</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Date of publication</entry>
+<entry>November 1994</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Date of update/revision</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry>+</entry><entry colsep="1">Date of citation</entry>
+<entry>[cited 10 February 1995]</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Series</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Notes</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry morerows="1">+</entry>
+<entry morerows="1" colsep="1">
+Availability and access</entry>
+<entry>Available from World Wide Web: &lt;http://germany.eu.net/books/carroll/alice/html&gt;</entry>
+</row>
+<row>
+<entry colsep="1">Also available in PostScript and ASCII versions from Internet: &lt;ftp://ftp.Germany.EU.net/pub/books/carroll/&gt;</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Standard number</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<example>
+<title>DocBook source code</title>
+<programlisting language="xml"><xi:include href="iso690.007.xml" parse="text"/></programlisting>
+</example>
+
+<example>
+<title>Output according to ISO 690 standard</title>
+<para>CARROLL, Lewis.
+<emphasis>Alice's Adventures in Wonderland</emphasis> [online].
+Textinfo ed. 2.1.
+[Dortmund, Germany]: Windspiel, November 1994 [cited 10 February 1995].
+Available from World Wide Web: &lt;http://germany.eu.net/books/carroll/alice/html&gt;.
+Also available in PostScript and ASCII versions from Internet: &lt;ftp://ftp.Germany.EU.net/pub/books/carroll/&gt;.
+</para>
+</example>
+
+</section>
+
+<section>
+<title>Parts of monographs, databases and computer programs</title>
+
+<informaltable>
+<tgroup cols="3" rowsep="1">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
+<thead>
+<row>
+<entry/><entry colsep="1">Element</entry>
+<entry>Example</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry/><entry colsep="1">Primary responsibility of host document</entry>
+<entry>CARROLL, Lewis</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title of host document</entry>
+<entry><emphasis>Alice's Adventures in Wonderland</emphasis>
+</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Type of medium</entry>
+<entry>[online]</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Subordinate responsibility of host document</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry/><entry colsep="1">Edition</entry>
+<entry>Textinfo ed. 2.2</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Place of publication</entry>
+<entry>[Dortmund, Germany]</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Publisher</entry>
+<entry>Windspiel</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Date of publication</entry>
+<entry>November 1994</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Date of update/revision</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry>+</entry><entry colsep="1">Date of citation</entry>
+<entry>[cited 30 March 1995]</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Chapter or equivalent designation (of part)</entry>
+<entry>Chapter VII</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title (of part)</entry>
+<entry>Mad Tea-Party</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Numeration within host document</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry/><entry colsep="1">Location within host document</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Notes</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry>+</entry><entry colsep="1">Availability and access</entry>
+<entry>Available from World Wide Web: &lt;http://germany.eu.net/books/carroll/alice_10.html#SEC13&gt;</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Standard number</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<example>
+<title>DocBook source code</title>
+<programlisting language="xml"><xi:include href="iso690.008.xml" parse="text"/></programlisting>
+</example>
+
+<example>
+<title>Output according to ISO 690 standard</title>
+<para>CARROLL, Lewis.
+<emphasis>Alice's Adventures in Wonderland</emphasis> [online].
+Textinfo ed. 2.2.
+[Dortmund, Germany]: Windspiel, November 1994 [cited 30 March 1995].
+Chapter VII, Mad Tea-Party.
+Available from World Wide Web: &lt;http://germany.eu.net/books/carroll/alice_10.html#SEC13&gt;.
+</para>
+</example>
+
+</section>
+<section>
+<title>Contributions to monographs, databases and computer programs</title>
+
+<informaltable>
+<tgroup cols="3" rowsep="1">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
+<thead>
+<row>
+<entry/><entry colsep="1">Element</entry>
+<entry>Example</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry/><entry colsep="1">Primary responsibility (of contribution)</entry>
+<entry>MCCONNELL, W. H.</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title (of contribution)</entry>
+<entry>Constitutional History</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Primary responsibility of host document</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title of host document</entry>
+<entry><emphasis>The Canadian Encyclopedia</emphasis>
+</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Type of medium</entry>
+<entry>[CD-ROM]</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Subordinate responsibility of host document</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry/><entry colsep="1">Edition</entry>
+<entry>Macintosh version 1.1</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Place of publication</entry>
+<entry>Toronto</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Publisher</entry>
+<entry>McClelland &amp; Stewart</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Date of publication</entry>
+<entry>c1993</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Date of update/revision</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry>+</entry><entry colsep="1">Date of citation</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Numeration within host document</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry/><entry colsep="1">Location within host document</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Notes</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry>+</entry><entry colsep="1">Availability and access</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry/><entry colsep="1">Standard number</entry>
+<entry>ISBN 0-7710-1932-7</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<example>
+<title>DocBook source code</title>
+<programlisting language="xml"><xi:include href="iso690.009.xml" parse="text"/></programlisting>
+</example>
+
+<example>
+<title>Output according to ISO 690 standard</title>
+<para>MCCONNELL, W. H.
+Constitutional History.
+In
+<emphasis>The Canadian Encyclopedia</emphasis> [CD-ROM].
+Macintosh version 1.1.
+Toronto: McClelland &amp; Stewart, c1993.
+ISBN 0-7710-1932-7.
+</para>
+</example>
+</section>
+</section>
+
+<section>
+<title>Electronic serials</title>
+
+<section>
+<title>Entire serial</title>
+
+<informaltable>
+<tgroup cols="3" rowsep="1">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
+<thead>
+<row>
+<entry/><entry colsep="1">Element</entry>
+<entry>Example</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry/><entry colsep="1">Title</entry>
+<entry><emphasis>Journal of Technology Education</emphasis>
+</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Type of medium</entry>
+<entry>[online]</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Edition</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry/><entry colsep="1">Place of publication</entry>
+<entry>Blacksburg (Va.)</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Publisher</entry>
+<entry>Virginia Polytechnic Institute and State University</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Date of publication</entry>
+<entry>1989-</entry>
+</row>
+<row>
+<entry>+</entry><entry colsep="1">Date of citation</entry>
+<entry>[cited 15 March 1995]</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Series</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Notes</entry>
+<entry>Semi-annual</entry>
+</row>
+<row>
+<entry>+</entry><entry colsep="1">Availability and access</entry>
+<entry>Available from Internet: &lt;gopher://borg.lib.vt.edu:edu:70/1/jte&gt;</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Standard number</entry>
+<entry>ISSN 1045-1064</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<example>
+<title>DocBook source code</title>
+<programlisting language="xml"><xi:include href="iso690.010.xml" parse="text"/></programlisting>
+</example>
+
+<example>
+<title>Output according to ISO 690 standard</title>
+<para><emphasis>Journal of Technology Education</emphasis> [online].
+Blacksburg (Va.): Virginia Polytechnic Institute and State University, 1989- [cited 15 March 1995].
+Semi-annual.
+Available from Internet: &lt;gopher://borg.lib.vt.edu:edu:70/1/jte&gt;.
+ISSN 1045-1064.
+</para>
+</example>
+</section>
+
+<section>
+<title>Articles and other contributions</title>
+
+<informaltable>
+<tgroup cols="3" rowsep="1">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
+<thead>
+<row>
+<entry/><entry colsep="1">Element</entry>
+<entry>Example</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry/><entry colsep="1">Primary responsibility of contribution</entry>
+<entry>PRICE-WILKIN, John</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title of contribution</entry>
+<entry>Using the World-Wide Web to Deliver Complex Electronic Documents: Implications for Libraries</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title Serials</entry>
+<entry><emphasis>The Public-Access Computer Systems Review</emphasis>
+</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Type of medium</entry>
+<entry>[online]</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Edition</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry/><entry colsep="1">Number designation</entry>
+<entry>1994, vol. 5, no. 3</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Date of update/revision</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry>+</entry><entry colsep="1">Date of citation</entry>
+<entry>[cited 1994-07-28]</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Location within host document</entry>
+<entry>pp. 5-21</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Notes</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry>+</entry><entry colsep="1">Availability and access</entry>
+<entry>Available from Internet: &lt;gopher://info.lib.uh.edu:70/00/articles/e-journals/uhlibrary/pacsreview/v5/n3/pricewil.5n3&gt;</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Standard number</entry>
+<entry>ISSN 1048-6542</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<example>
+<title>DocBook source code</title>
+<programlisting language="xml"><xi:include href="iso690.011.xml" parse="text"/></programlisting>
+</example>
+
+<example>
+<title>Output according to ISO 690 standard</title>
+<para>PRICE-WILKIN, John.
+Using the World-Wide Web to Deliver Complex Electronic Documents: Implications for Libraries.
+<emphasis>The Public-Access Computer Systems Review</emphasis> [online].
+1994, vol. 5, no. 3 [cited 1994-07-28], pp. 5-21.
+Available from Internet: &lt;gopher://info.lib.uh.edu:70/00/articles/e-journals/uhlibrary/pacsreview/v5/n3/pricewil.5n3&gt;.
+ISSN 1048-6542.
+</para>
+</example>
+</section>
+</section>
+
+<section>
+<title>Electronic bulletin boards, discussion lists and electronic messages</title>
+
+<section>
+<title>Entire message system</title>
+
+<informaltable>
+<tgroup cols="3" rowsep="1">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
+<thead>
+<row>
+<entry/><entry colsep="1">Element</entry>
+<entry>Example</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry/><entry colsep="1">Title</entry>
+<entry><emphasis>PACS-L (Public Access Computer Systems Forum)</emphasis>
+</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Type of medium</entry>
+<entry>[online]</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Place of publication</entry>
+<entry>Houston (Tex.)</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Publisher</entry>
+<entry>University of Houston Libraries</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Date of publication</entry>
+<entry>June 1989-</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Date of citation</entry>
+<entry>[cited 17 May 1995]</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Notes</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry/><entry colsep="1">Availability and access</entry>
+<entry>Available from Internet: &lt;listserv@unhupvm1.uh.edu&gt;</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<example>
+<title>DocBook source code</title>
+<programlisting language="xml"><xi:include href="iso690.011.xml" parse="text"/></programlisting>
+</example>
+
+<example>
+<title>Output according to ISO 690 standard</title>
+<para><emphasis>PACS-L (Public Access Computer Systems Forum)</emphasis> [online].
+Houston (Tex.): University of Houston Libraries, June 1989- [cited 17 May 1995].
+Available from Internet: &lt;listserv@unhupvm1.uh.edu&gt;.
+</para>
+</example>
+</section>
+
+<section>
+<title>Electronic messages</title>
+
+<informaltable>
+<tgroup cols="3" rowsep="1">
+<colspec colname="c1"/>
+<colspec colname="c2"/>
+<colspec colname="c3"/>
+<thead>
+<row>
+<entry/><entry colsep="1">Element</entry>
+<entry>Example</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry/><entry colsep="1">Primary responsibility of message</entry>
+<entry>PARKER, Elliot</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title of message</entry>
+<entry>Re: Citing Electronic Journals</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Title of host message system</entry>
+<entry><emphasis>PACS-L (Public Access Computer Systems Forum)</emphasis>
+</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Type of medium</entry>
+<entry>[online]</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Subordinate responsibility/applicant(s)</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry/><entry colsep="1">Place of publication</entry>
+<entry>Houston (Tex.)</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Publisher</entry>
+<entry>University of Houston Libraries</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Date of publication</entry>
+<entry>24 November 1989; 13:29:35 CST</entry>
+</row>
+<row>
+<entry/><entry colsep="1">Date of citation</entry>
+<entry>[cited 1 January 1995; 16:15 EST]</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Numeration within host message system</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry/><entry colsep="1">Location within host message system</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+<row>
+<entry/><entry colsep="1">Availability and access</entry>
+<entry>Available from Internet: &lt;telnet://brsuser@a.cni.org&gt;</entry>
+</row>
+<row>
+<entry>*</entry><entry colsep="1">Notes</entry><entry>— <emphasis>(not in this example)</emphasis></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<example>
+<title>DocBook source code</title>
+<programlisting language="xml"><xi:include href="iso690.012.xml" parse="text"/></programlisting>
+</example>
+
+<example>
+<title>Output according to ISO 690 standard</title>
+<para>PARKER, Elliot.
+Re: Citing Electronic Journals.
+In
+<emphasis>PACS-L (Public Access Computer Systems Forum)</emphasis> [online].
+Houston (Tex.): University of Houston Libraries, 24 November 1989; 13:29:35 CST
+[cited 1 January 1995; 16:15 EST].
+Available from Internet: &lt;telnet://brsuser@a.cni.org&gt;.</para>
+</example>
+</section>
+</section>
+</article>
