@@ -1,0 +1,24 @@
+<biblioentry xmlns="http://docbook.org/ns/docbook"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+             role="message" version="5.0">
+  <biblioset relation="part">
+    <author>
+      <personname>
+	<surname>Parker</surname>
+	<firstname>Elliot</firstname>
+      </personname>
+    </author>
+    <title>Re: Citing Electronic Journals</title>
+  </biblioset>
+  <biblioset relation="book">
+    <title>PACS-L (Public Access Computer Systems Forum)</title>
+    <bibliomisc role="medium">online</bibliomisc>
+    <publisher>
+      <publishername>University of Houston Libraries</publishername>
+      <address><city>Houston (Tex.)</city></address>
+    </publisher>
+    <pubdate>24 November 1989; 13:29:35 CST</pubdate>
+    <date role="cit">1 January 1995; 16:15 EST</date>
+    <biblioid class="uri" xlink:href="telnet://brsuser@a.cni.org"/>
+  </biblioset>
+</biblioentry>

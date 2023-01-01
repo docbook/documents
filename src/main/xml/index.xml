@@ -3,11 +3,29 @@
          version="5.0">
 <info>
   <title>DocBook Documents</title>
-  <pubdate>2021-05-11</pubdate>
+  <h:link xmlns:h="http://www.w3.org/1999/xhtml"
+          rel="stylesheet" href="./css/defguide.css"/>
 </info>
 
 <para>This repository contains specifications and other documentation related to
-DocBook. It currently contains:</para>
+DocBook. These are generally requirements, background papers, and working drafts.
+</para>
+
+<section xml:id="transclusion">
+<title>Transclusion</title>
+
+<para>“Transclusion” describes the process by which one document
+incorporates another by reference. In XML, this is most commonly done
+with XInclude. The presence of IDs and ID/IDREF links in an XML
+document complicates the transclusion process. Transcluding a document
+or fragment (for example, a warning or procedure) more than once may
+introduce multiple elements with the same ID. That, in turn, makes
+IDREF links to those IDs more complicated.</para>
+
+<para>The transclusion specification describes a relatively
+light-weight mechanism by which a document author can automatically
+transform IDs and IDREFs to resolve duplicate IDs and clarify the
+linking relationships.</para>
 
 <variablelist>
 <varlistentry>
@@ -25,5 +43,16 @@ DocBook. It currently contains:</para>
 </listitem>
 </varlistentry>
 </variablelist>
+</section>
+
+<section xml:id="iso690">
+<title>ISO 690 Bibliographies</title>
+
+<para>Evidence suggests that Jana Dvořáková published a
+description of how to use DocBook to produce ISO 690 bibliographies.
+It was lost from the wiki sometime circa 2012, it’s been recovered here
+as <link xlink:href="iso690.html">Bibliography acorrding to ISO 690
+and ISO 690-2 standards</link>.</para>
+</section>
 
 </article>
